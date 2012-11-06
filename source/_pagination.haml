@@ -1,0 +1,13 @@
+- if paginate 
+  .pagination
+    %p
+      Página 
+      = page_number
+      de
+      = num_pages 
+
+    - if prev_page
+      %p= link_to 'Página anterior', prev_page
+
+    - if next_page
+      %p= link_to 'Siguiente página', next_page

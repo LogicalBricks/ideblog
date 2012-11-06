@@ -1,0 +1,58 @@
+!!! 5
+%html
+  %head
+    %meta{ charset:"utf-8" }
+    %meta{ 'http-equiv'=>'X-UA-Compatible', content:'IE=edge;chrome=1' }
+    = stylesheet_link_tag 'reset'
+    = stylesheet_link_tag 'ideblog'
+    = favicon_tag 'images/favicon.png'
+    %title IDEclara - la solución para la declaración del IDE
+  %body
+    %header
+      .title
+        %a{href:'/'}
+          = image_tag 'ideclara.png'
+        %p
+          %i La solución para la declaración informativa del Impuesto a los Depósitos en Efectivo
+    .separator
+    #content
+      %section#main{ role: 'main' }
+        - if is_blog_article?
+          = partial "layouts/blog_article"
+        - else
+          = yield
+
+      %aside
+        %h2 Artículos recientes
+        %ol
+          - blog.articles[0...10].each do |article| 
+            %li
+              %a{href:"#{article.url}"}
+                = article.title
+              %span
+                = article.date.strftime('%b %e') 
+
+        %h2 Etiquetas
+        %ol
+          - blog.tags.each do |tag, articles| 
+            %li
+              %a{href:"#{tag_path tag}"} 
+                = tag 
+                (#{articles.size})
+
+        %h2 Por año
+        %ol
+          - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
+            %li
+              %a{href:"#{blog_year_path year}"}
+                = year 
+                (#{articles.size})
+    %footer
+      .credits
+
+        = link_to 'IDEclara', 'http://ideclara.com'
+        &reg;
+        Es una marca registrada de
+        = link_to 'LogicalBricks Solutions SC de RL de CV', 'http://logicalbricks.com'
+        &copy; 2012
+    .corner

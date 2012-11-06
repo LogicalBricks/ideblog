@@ -1,0 +1,7 @@
+%article
+  %h1
+    = link_to current_page.data.title, current_article
+    %span= I18n.localize(current_article.date, format: :short)
+
+  = current_article.body
+

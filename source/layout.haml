@@ -11,7 +11,7 @@
     %header
       .title
         %a{href:'/'}
-          = image_tag 'ideclara.png'
+          = image_tag 'ideclara_blog.png'
         %p
           %i La solución para la declaración informativa del Impuesto a los Depósitos en Efectivo
     .separator
@@ -24,24 +24,16 @@
 
       %aside
         %h2 Artículos recientes
-        %ol
+        %ul
           - blog.articles[0...10].each do |article| 
             %li
               %a{href:"#{article.url}"}
                 = article.title
               %span
-                = article.date.strftime('%b %e') 
-
-        %h2 Etiquetas
-        %ol
-          - blog.tags.each do |tag, articles| 
-            %li
-              %a{href:"#{tag_path tag}"} 
-                = tag 
-                (#{articles.size})
+                = article.date.strftime("%d/%m/%Y")
 
         %h2 Por año
-        %ol
+        %ul
           - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
             %li
               %a{href:"#{blog_year_path year}"}

@@ -1,7 +1,7 @@
 body
   width: 100%
-  font-family: Verdana, Arial, sans-serif 
-  background: #fff
+  font-family: Verdana, sans-serif 
+  background: #101010
   color: #555
 
 a 
@@ -14,26 +14,68 @@ a
 
 header
   width: 100%
-  height: 90px
-  background-color: #fff 
+  height: 100px
+  background-color: #0c2624 
+  padding-top: 10px
   margin: 0
   .title
     margin: 0 auto
+    height: 100px
     width: 960px
-    img
+    background-color: #00a599
+    color: #e9e8e7
+    div#izquierda
       float: left
-    p 
-      padding-left: 100px
-      padding-top: 20px
-      width: 300px
+      width: 25%
+      a#title
+        background-image: url('/images/ideclara_blog.png')
+        display: block
+        width: 186px
+        height: 65px
+        text-indent: -9999px
+        margin: 20px 30px
+        float: left
+    div#derecha
       float: left
-      font-style: italic
+      width: 75%
+      margin-top: 10px
+      .recuadro
+        margin-top: 5px
+        float: right
+        margin-left: 6px
+        top: 6px
+        height: 25px
+        width: 75px
+        &#uno
+          background: #006b63
+        &#dos
+          background: #35d2c6
+        &#tres
+          background: #5ed2ca
+        &#cuatro
+          background-color: #e9e8e7
+          color: #1a1a1a
+          width: auto
+          text-align: right
+        &#cinco
+          background-color: #e9e8e7
+          color: #1a1a1a
+          width: auto
+          text-align: right
+        p
+          padding-right: 30px
+          padding-left: 50px
+          margin-top: 4px
+          font-size: 15px
+    acronym
+      border-bottom: 1px dotted #e9e8e7      
 
 .separator
   clear: both
   width: 100% 
-  background-color: #555
-  height: 10px
+  background-color: #006B63
+  margin-bottom: 5px
+  height: 25px
 
 .corner 
   background: transparent url('../images/inferior_derecha.png') left top no-repeat
@@ -48,29 +90,53 @@ header
   margin: 0 auto
 
 #content
-  background: #fff
   clear: both
   display: table
   width: 960px
   margin: 0 auto
+  border-left: 1px dotted #006B63
   section#main
     display: table-cell
     width: 66%
-    padding-right: 4% 
+    padding: 10px 20px 
+    color: #e9e8e7
+    a 
+      color: #ff6f00 
+      border-bottom: 1px dotted #006B63
+      &:active, &:visited 
+        color: #A64800 
+      &:hover
+        color: #FF9340
     article
       width: 100%
-      padding: 10px
+      border-bottom: 1px dotted #006B63
+      h1, h2, h3, h4, h5, h6
+        margin: 0.5em 0 0.3em
+        font-weight: normal
       h1
-        font-size: 1.5em
-        span
-          font-size: 0.8em
+        font-size: 1.4em
+        span.fecha
+          margin-top: 0.5em
+          float: right
+          font-size: 0.6em
+          img
+            vertical-align: text-bottom
+            margin-right: 0.2em
       p 
         text-align: justify
   aside
+    font-size: 16px
+    color: #5ED2CA
+    h1, h2, h3, h4, h5, h6
+      color: #5ED2CA
+      font-weight: bold
+    ul
+      font-size: 0.9em
+      list-style: square
     display: table-cell
     padding-left: 3% 
     width: 27%
-    background-color: #eee
+    background-color: #006B63
 
 footer
   background-color: #333
@@ -85,5 +151,7 @@ footer
  
 .pagination
   text-align: center
-  margin: 0 auto
   font-size: 0.8em
+  background-color: #006B63
+  padding-top: 10px
+  padding-bottom: 1px

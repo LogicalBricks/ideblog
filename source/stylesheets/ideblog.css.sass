@@ -11,8 +11,9 @@ $comp-5: #FFB073
 
 body
   width: 100%
-  font-family: Verdana, sans-serif 
-  background: #e0e0e0
+  font-family: "Trebuchet MS", Helvetica, sans-serif
+  background-color: #C1DFBE
+  background-image: url(/images/bg.jpg)
   color: #555
 
 a 
@@ -23,26 +24,30 @@ a
   &:hover
     color: $comp-1 
 
+span.verde
+  color: $prim-1
+
+.page
+  margin: 10px auto
+  width: 960px
+  background-color: white
+
 header
   width: 100%
-  // background-color: #8ad9d3 
   padding-top: 10px
   margin: 0
-  .title
-    border: 2px solid $prim-3
-    margin: 0 auto
-    height: 130px
-    width: 960px
-    background-color: $prim-1
+  #navigation
+    height: 70px
     color: #e9e8e7
     div#izquierda
       float: left
-      width: 25%
+      width: 20%
       a#title
+        margin: 15px 30px
         background-image: url('/images/ideclara_logo_blog.png')
         display: block
-        width: 315px
-        height: 130px
+        width: 109px
+        height: 47px
         text-indent: -9999px
         // margin-top: 40px
         // margin-left: 30px
@@ -50,46 +55,29 @@ header
     div#derecha
       float: left
       width: 75%
-      margin-top: 10px
-      .recuadro
-        margin-top: 15px
+      color: #00A69C
+      font-weight: bold
+      div#menu
         float: right
-        margin-left: 5px
-        top: 6px
-        height: 25px
-        width: 39px
-        border: 1px solid $prim-3
-        &#uno
-          background: $prim-3
-        &#dos
-          background: $prim-5
-        &#tres
-          background: $prim-2
-        &#cuatro
-          background: $prim-1
-        &#cinco
-          background: $prim-4
-        &#texto-1
-          background-color: #f2f2f2
-          color: #1a1a1a
-          width: 430px
-          text-align: right
-          margin-right: -10px
-        &#texto-2
-          background-color: #f2f2f2
-          color: #1a1a1a
-          width: 384px
-          text-align: right
-          margin-right: -10px
-        p
-          padding-right: 20px
-          margin-top: 4px
-          font-size: 15px
-    acronym
-      border-bottom: 1px dotted #e9e8e7      
+        margin-top: 25px
+        ul
+          list-style-type: none
+          li
+            padding-left: 20px
+            display: inline
+            text-transform: uppercase
+  #slides
+    font-weight: bold
+    text-transform: uppercase
+    background: white
+    border: 1px solid #999999
+    margin: 10px
+    padding: 15px 20px
+    img 
+      padding-left: 360px
+      vertical-align: middle
 
 .separator
-  clear: both
   width: 100% 
   background-color: $prim-3
   margin: 5px 0
@@ -110,24 +98,23 @@ header
 #content
   clear: both
   display: table
-  width: 960px
   margin: 0 auto
   background-color: white
+  padding: 10px
   section#main
     display: table-cell
     width: 66%
-    padding: 10px 20px 
-    color: bclak
-    a 
-      color: $comp-1 
-      border-bottom: 1px dotted $prim-3
-      &:active, &:visited 
-        color: $comp-3 
-      &:hover
-        color: $comp-4
+    padding-right: 20px 
     article
-      width: 100%
-      border-bottom: 1px dotted $prim-3
+      border: 1px dotted #f2f2f2
+      padding: 10px 15px
+      margin-bottom: 25px
+      a 
+        color: $prim-1 
+        &:active, &:visited 
+          color: $comp-3 
+        &:hover
+          color: $comp-4
       h1, h2, h3, h4, h5, h6
         margin: 0.5em 0 0.3em
         font-weight: normal
@@ -142,19 +129,62 @@ header
             margin-right: 0.2em
       p 
         text-align: justify
+
   aside
-    font-size: 16px
-    color: $prim-5
+    padding: 20px
+    color: lighten(#333, 30%)
+    display: table-cell
+    width: 27%
+    background-color: #F2F2F2
+    div#search
+      width: 100%
+      height: 40px
+      border: 1px solid #999999
+      background-image: url('/images/search.png')
+      margin-bottom: 20px
+      -webkit-border-bottom-right-radius: 4px
+      -webkit-border-bottom-left-radius: 4px
+      -moz-border-radius-bottomright: 4px
+      -moz-border-radius-bottomleft: 4px
+      border-bottom-right-radius: 4px
+      border-bottom-left-radius: 4px
+      input
+        float: left
+        width: 180px
+        margin: 6px 0 6px 6px
+        height: 30px
+        padding-left: 10px
+        background: transparent url('/images/search_bg.png') no-repeat top left
+      a#search
+        float: left
+        display: block
+        float: left
+        margin: 6px 0
+        padding: 0
+        width: 32px
+        height: 35px
+        background: transparent url('/images/search_btn.png') no-repeat top left
+
+    a 
+      color: #333
+      text-decoration: none
+      &:active, &:visited 
+        color: $prim-4
+      &:hover
+        color: $comp-1 
     h1, h2, h3, h4, h5, h6
-      color: $prim-5
-      font-weight: bold
+      color: #1a1a1a
+      text-transform: uppercase
+      padding-bottom: 10px
+      border-bottom: 1px solid #999999
     ul
       font-size: 0.9em
-      list-style: square
-    display: table-cell
-    padding-left: 3% 
-    width: 27%
-    background-color: $prim-3
+      list-style-image: url('/images/bullet.png')
+      font-style: italic
+      li
+        margin: 10px
+        padding: 10px 5px
+        border-bottom: 1px solid #999999
 
 footer
   background-color: #333

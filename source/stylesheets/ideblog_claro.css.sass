@@ -1,0 +1,175 @@
+$prim-1: #00A599 
+$prim-2: #1F7C75
+$prim-3: #006B63
+$prim-4: #35D2C6
+$prim-5: #5ED2CA
+$comp-1: #FF6F00
+$comp-2: #BF6E30
+$comp-3: #A64800
+$comp-4: #FF9340
+$comp-5: #FFB073
+
+body
+  width: 100%
+  font-family: Verdana, sans-serif 
+  background: #e0e0e0
+  color: #555
+
+a 
+  color: $prim-1 
+  text-decoration: none
+  &:active, &:visited 
+    color: $prim-4
+  &:hover
+    color: $comp-1 
+
+header
+  width: 100%
+  // background-color: #8ad9d3 
+  padding-top: 10px
+  margin: 0
+  .title
+    border: 2px solid $prim-3
+    margin: 0 auto
+    height: 130px
+    width: 960px
+    background-color: $prim-1
+    color: #e9e8e7
+    div#izquierda
+      float: left
+      width: 25%
+      a#title
+        background-image: url('/images/ideclara_logo_blog.png')
+        display: block
+        width: 315px
+        height: 130px
+        text-indent: -9999px
+        // margin-top: 40px
+        // margin-left: 30px
+        float: left
+    div#derecha
+      float: left
+      width: 75%
+      margin-top: 10px
+      .recuadro
+        margin-top: 15px
+        float: right
+        margin-left: 5px
+        top: 6px
+        height: 25px
+        width: 39px
+        border: 1px solid $prim-3
+        &#uno
+          background: $prim-3
+        &#dos
+          background: $prim-5
+        &#tres
+          background: $prim-2
+        &#cuatro
+          background: $prim-1
+        &#cinco
+          background: $prim-4
+        &#texto-1
+          background-color: #f2f2f2
+          color: #1a1a1a
+          width: 430px
+          text-align: right
+          margin-right: -10px
+        &#texto-2
+          background-color: #f2f2f2
+          color: #1a1a1a
+          width: 384px
+          text-align: right
+          margin-right: -10px
+        p
+          padding-right: 20px
+          margin-top: 4px
+          font-size: 15px
+    acronym
+      border-bottom: 1px dotted #e9e8e7      
+
+.separator
+  clear: both
+  width: 100% 
+  background-color: $prim-3
+  margin: 5px 0
+  height: 25px
+
+.corner 
+  background: transparent url('../images/inferior_derecha.png') left top no-repeat
+  position: fixed
+  bottom: 0 
+  right: 0 
+  width: 57px
+  height: 70px
+
+.container
+  width: 960px
+  margin: 0 auto
+
+#content
+  clear: both
+  display: table
+  width: 960px
+  margin: 0 auto
+  background-color: white
+  section#main
+    display: table-cell
+    width: 66%
+    padding: 10px 20px 
+    color: bclak
+    a 
+      color: $comp-1 
+      border-bottom: 1px dotted $prim-3
+      &:active, &:visited 
+        color: $comp-3 
+      &:hover
+        color: $comp-4
+    article
+      width: 100%
+      border-bottom: 1px dotted $prim-3
+      h1, h2, h3, h4, h5, h6
+        margin: 0.5em 0 0.3em
+        font-weight: normal
+      h1
+        font-size: 1.4em
+        span.fecha
+          margin-top: 0.5em
+          float: right
+          font-size: 0.6em
+          img
+            vertical-align: text-bottom
+            margin-right: 0.2em
+      p 
+        text-align: justify
+  aside
+    font-size: 16px
+    color: $prim-5
+    h1, h2, h3, h4, h5, h6
+      color: $prim-5
+      font-weight: bold
+    ul
+      font-size: 0.9em
+      list-style: square
+    display: table-cell
+    padding-left: 3% 
+    width: 27%
+    background-color: $prim-3
+
+footer
+  background-color: #333
+  color: #fff
+  clear: both
+  width: 100%
+  padding: 10px
+  font-size: 0.8em
+  .credits
+    width: 960px
+    margin: 0 auto
+ 
+.pagination
+  text-align: center
+  font-size: 0.8em
+  background-color: $prim-3
+  padding-top: 10px
+  padding-bottom: 1px

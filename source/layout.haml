@@ -8,51 +8,52 @@
     = favicon_tag 'images/favicon.png'
     %title IDEclara - la solución para la declaración del IDE
   %body
-    %header
-      .title
-        #izquierda
-          %a{id: 'title', href:'/'}
-            = 'IDEclara blog'
-        #derecha
-          .recuadro#texto-1
-            %p
-              = 'La solución para la declaración informativa del '
-              %acronym{title: 'Impuesto a los Depósitos en Efectivo'}
-                = 'IDE'
-          .recuadro#uno
-          .recuadro#dos
-          .recuadro#texto-2
-            %p
-              %b
-                = 'Impuesto a los Depósitos en Efectivo'
-          .recuadro#tres
-          .recuadro#cuatro
-          .recuadro#cinco
-    .separator
-    #content
-      %section#main{ role: 'main' }
-        - if is_blog_article?
-          = partial "layouts/blog_article"
-        - else
-          = yield
+    .page
+      %header
+        #navigation
+          #izquierda
+            %a{id: 'title', href:'/'}
+              = 'IDEclara blog'
+          #derecha
+            #menu
+              %ul
+                %li Inicio
+                %li Acerca de
+                %li Conoce IDEclara
+                %li Contacto
+                %li Suscripciones
+        #slides
+          %span.verde IDE
+          clara
+          = image_tag 'diapo.png'
 
-      %aside
-        %h2 Artículos recientes
-        %ul
-          - blog.articles[0...10].each do |article| 
-            %li
-              %a{href:"#{article.url}"}
-                = article.title
-              %span
-                = article.date.strftime("%d/%m/%Y")
+      #content
+        %section#main{ role: 'main' }
+          - if is_blog_article?
+            = partial "layouts/blog_article"
+          - else
+            = yield
 
-        %h2 Por año
-        %ul
-          - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
-            %li
-              %a{href:"#{blog_year_path year}"}
-                = year 
-                (#{articles.size})
+        %aside
+          #search
+            %input{placeholder: 'Buscar...'} 
+            %a{id:'search'}
+          %h3 Artículos recientes
+          %ul
+            - blog.articles[0...10].each do |article| 
+              %li
+                %a{href:"#{article.url}"}
+                  = article.title
+                %span
+                  = article.date.strftime("%d/%m/%Y")
+
+          %h3 Por año
+          %ul
+            - blog.articles.group_by {|a| a.date.year }.each do |year, articles|
+              %li
+                %a{href:"#{blog_year_path year}"}
+                  = year 
+                  (#{articles.size})
     %footer
       .credits
 

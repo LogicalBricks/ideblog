@@ -17,15 +17,23 @@
           #derecha
             #menu
               %ul
-                %li Inicio
+                %li= link_to 'Inicio', '/'
                 %li Acerca de
-                %li Conoce IDEclara
-                %li Contacto
+                %li= link_to 'Conoce IDEclara', 'http://ideclara.com'
+                %li= link_to 'Contacto', 'http://ideclara.com/contacto'
                 %li Suscripciones
         #slides
-          %span.verde IDE
-          clara
-          = image_tag 'diapo.png'
+          #text
+            %h1
+              %span.verde IDE
+              clara
+            %h3
+              Bienvenido a nuestro blog 
+            %p#descripcion
+              Aquí encontrarás toda clase de información útil referente a la declaración informativa del 
+              %b= 'Impuesto a los Depósitos en Efectivo IDE.'
+          #image
+            = image_tag 'diapo.png'
 
       #content
         %section#main{ role: 'main' }
@@ -36,8 +44,12 @@
 
         %aside
           #search
-            %input{placeholder: 'Buscar...'} 
-            %a{id:'search'}
+            %form{method: 'get', action: 'http://www.google.com/search'}
+              %input{placeholder: 'Buscar...', name: 'q'} 
+              %button{type: 'submit', id:'search'}
+                = image_tag '/images/search_btn.png'
+              %input{type: 'hidden', name: 'sitesearch', value: 'ideclara.com'} 
+
           %h3 Artículos recientes
           %ul
             - blog.articles[0...10].each do |article| 
